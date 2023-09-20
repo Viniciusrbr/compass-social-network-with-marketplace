@@ -16,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
 
 body{
     font-family: 'Poppins', sans-serif;
-    background: ${props => props.theme["gray-700"]};
+    background: ${props => props.theme["gray-900"]};
     color: ${props => props.theme.white};
 }
 
