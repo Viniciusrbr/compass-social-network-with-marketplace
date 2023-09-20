@@ -1,12 +1,16 @@
 import { Outlet } from "react-router-dom";
-import sideImage from "../../assets/images/login-side-image.jpg"
-import { Container } from "./styles";
+import Image from "../../assets/images/login-side-image.jpg"
+import { BackgroundImage, Container, ImageWrapper } from "./styles";
 
 function LoginMainLayout() {
     return (
         <Container>
             <Outlet />
-            <img src={sideImage} alt="" />
+
+            <ImageWrapper>
+                <BackgroundImage src={Image} alt="Background" />
+            </ImageWrapper>
+            
         </Container>
     );
 }

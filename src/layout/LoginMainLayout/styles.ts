@@ -1,19 +1,19 @@
 import styled from "styled-components";
 
-export const Container = styled.main`
+export const Container = styled.div`
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+`;
+
+export const ImageWrapper = styled.div`
   display: flex;
   justify-content: center;
-  background: var(--gradient-background, linear-gradient(180deg, #2E2F36 0%, #17181C 100%));
+  align-items: center;
+  overflow: hidden;
+`;
 
-  img{
-    height: 100vh;
-  }
-
-  div{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100vh;
-    background-color: blue;
-  }
+export const BackgroundImage = styled.img`
+  height: 100%; 
+  object-fit: cover; 
 `;
