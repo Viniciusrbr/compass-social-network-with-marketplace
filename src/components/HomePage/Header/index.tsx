@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { HeaderSection, OpenMenu, UserInfo } from "./styles";
-import OpenMenuIcon from "../../assets/icons/OpenMenuIcon.svg";
-import CloseMenuIcon from "../../assets/icons/CloneMenuIcon.svg";
-import Bell from "../../assets/icons/Bell.svg";
-import World from "../../assets/icons/GlobeHemisphereEast.svg";
+import OpenMenuIcon from "../../../assets/icons/OpenMenuIcon.svg";
+import CloseMenuIcon from "../../../assets/icons/CloseMenuIcon.svg";
+import Bell from "../../../assets/icons/Bell.svg";
+import World from "../../../assets/icons/GlobeHemisphereEast.svg";
 
 interface HeaderProps {
   onMenuToggle: () => void;

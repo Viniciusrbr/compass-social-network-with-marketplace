@@ -1,4 +1,5 @@
-import compassLogo from "../../assets/images/logo-white.png"
+import { Link } from "react-router-dom";
+import compassLogo from "../../../assets/images/logo-white.png"
 import { SideMenuSection } from "./styles"
 
 interface SideMenuProps {
@@ -12,8 +13,8 @@ function SideMenu({ isOpen }: SideMenuProps) {
         <img src={compassLogo} alt="" />
 
         <ul>
-            <li><a href="#">Página Inicial</a></li>
-            <li><a href="#">Meu Perfil</a></li>
+            <li><Link to="/home">Página Inicial</Link></li>
+            <li><Link to="profile">Meu Perfil</Link></li>
             <li><a href="#">Marketplace</a></li>
             <li><a href="#">Sair</a></li>
         </ul>

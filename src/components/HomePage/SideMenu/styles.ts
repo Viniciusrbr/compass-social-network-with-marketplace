@@ -12,7 +12,7 @@ export const SideMenuSection = styled.aside`
     height: 100vh;
 
     transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 5s ease;
 
   &.open {
     transform: translateX(0);

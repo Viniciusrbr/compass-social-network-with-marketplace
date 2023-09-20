@@ -4,5 +4,7 @@ export const Container = styled.div`
 display: flex;
 align-items: flex-start;
 flex: 1 0 0;
-align-self: stretch;
+main{
+    width: 100%;
+}
 `

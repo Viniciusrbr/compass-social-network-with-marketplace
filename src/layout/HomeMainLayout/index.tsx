@@ -1,7 +1,8 @@
 import { useState } from "react";
-import Header from "../../components/Header";
-import SideMenu from "../../components/SideMenu";
+import Header from "../../components/HomePage/Header";
+import SideMenu from "../../components/HomePage/SideMenu";
 import { Container } from "./styles";
+import { Outlet } from "react-router-dom";
 
 function HomeMainLayout() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,10 +12,16 @@ function HomeMainLayout() {
   };
 
   return (
+
     <Container>
       <SideMenu isOpen={isMenuOpen} />
-      <Header onMenuToggle={toggleMenu} />
+
+      <main>
+        <Header onMenuToggle={toggleMenu} />
+        <Outlet />
+      </main>
     </Container>
+
   );
 }
 
