@@ -1,9 +1,42 @@
 import { FormWrapper, Form, FormGroup, SubmitButton, RegisterText, FormTexts, LoginIcons } from "./sytles";
 import User from "../../../assets/icons/User.svg";
 import Lock from "../../../assets/icons/Lock.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { FormEvent, useState } from "react";
+import authServise from "../../../services/AuthService";
+import { useEffect } from "react";
 
 const LoginForm = () => {
+    const navigate = useNavigate();
+    const [wrong, setWrong] = useState(false)
+    
+
+    useEffect(() => {
+        if (sessionStorage.getItem("user-token")) {
+            navigate("/home")
+        }
+    }, []);
+
+    const handleLogin = async (event: FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+
+        const formData = new FormData(event.currentTarget);
+
+        const usuario = formData.get("usuario")!.toString();
+        const password = formData.get("password")!.toString();
+        const params = { usuario, password };
+
+        const { status } = await authServise.login(params);
+
+        if (status === 200) {
+            alert("você esta logado")
+            navigate("/home")
+        } else {
+            setWrong(true)
+        }
+
+    }
+
     return (
         <FormWrapper>
 
@@ -13,16 +46,18 @@ const LoginForm = () => {
                 <h2>Login</h2>
             </FormTexts>
 
-            <Form>
-                <FormGroup>
-                    <input type="text" id="usuario" placeholder="Usuário" />
+            <Form onSubmit={handleLogin}>
+                <FormGroup wrong={wrong}>
+                    <input type="text" id="usuario" name="usuario" placeholder="Usuário" />
                     <LoginIcons className="icon" src={User} />
                 </FormGroup>
 
-                <FormGroup>
-                    <input type="password" id="senha" placeholder="Senha" />
+                <FormGroup wrong={wrong}>
+                    <input type="password" id="password" name="password" placeholder="Senha" />
                     <LoginIcons className="icon" src={Lock} />
                 </FormGroup>
+
+                {wrong && <p className="wrong-message">Usuário e/ou Senha inválidos. Por favor, tente novamente!</p>}
 
                 <SubmitButton type="submit">Entrar</SubmitButton>
             </Form>

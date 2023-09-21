@@ -48,7 +48,10 @@ function RegisterForm() {
 
         if (status === 200) {
             alert('Cadastro realizado com sucesso!')
-        } else {
+        } if (status === 422) {
+            alert('Usuario Já cadastrado.')
+        }
+        else {
             alert('Erro ao realizar cadastro.')
         }
 

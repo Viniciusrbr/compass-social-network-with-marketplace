@@ -12,10 +12,7 @@ function Feed() {
                 <UserPost />
             </div>
 
-
-
             <Friends />
-
 
         </Container>
     )
