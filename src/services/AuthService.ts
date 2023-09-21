@@ -3,9 +3,10 @@ import api from './api';
 export interface RegisterParams {
     nome: string;
     usuario: string;
-    nascimento: string;
+    data_nascimento: string;
     email: string;
-    senha: string;
+    password: string;
+    confirmar_senha: string;
 }
 
 const authServise = {
