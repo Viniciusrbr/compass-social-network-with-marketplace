@@ -6,8 +6,6 @@ import HomeMainLayout from "./layout/HomeMainLayout";
 import Profile from "./components/Profile";
 import Feed from "./components/HomePage/Feed";
 
-
-
 export function Router() {
     return (
         <Routes>

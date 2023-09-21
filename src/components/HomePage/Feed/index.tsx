@@ -1,3 +1,4 @@
+import UserPost from "../../UserPost"
 import Friends from "./Friends"
 import WhatsOnYourMind from "./WhatsOnYourMind"
 import { Container } from "./styles"
@@ -5,14 +6,15 @@ import { Container } from "./styles"
 function Feed() {
     return (
         <Container>
-            <div>
+
+            <div className="mainFeed">
                 <WhatsOnYourMind />
+                <UserPost />
             </div>
 
-            <div>
-                <Friends />
-            </div>
 
+
+            <Friends />
 
 
         </Container>

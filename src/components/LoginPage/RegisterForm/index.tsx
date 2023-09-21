@@ -6,11 +6,12 @@ import Calendar from "../../../assets/icons/Calendar.svg";
 import At from "../../../assets/icons/At.svg";
 import Lock from "../../../assets/icons/Lock.svg";
 import ShieldCheck from "../../../assets/icons/ShieldCheck.svg";
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
 import AuthService, { RegisterParams } from "../../../services/AuthService";
 
 
 function RegisterForm() {
+     const [wrong, setWrong] = useState(false)
 
     const handleRegister = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
@@ -20,11 +21,9 @@ function RegisterForm() {
         const nome = formData.get('nome')!.toString()
         const usuario = formData.get('usuario')!.toString()
 
-
         const nascimentoInput = formData.get('nascimento')!.toString();
         const nascimentoParts = nascimentoInput.split('/');
         const nascimento = `${nascimentoParts[2]}-${nascimentoParts[1]}-${nascimentoParts[0]}`;
-
 
         const email = formData.get('email')!.toString()
         const senha = formData.get('senha')!.toString()
@@ -39,9 +38,11 @@ function RegisterForm() {
         }
 
         if (senha !== confirmarSenha) {
+            setWrong(true)
             alert('Senhas não conferem')
             return
         }
+        
 
         const status = await AuthService.register(params)
 
@@ -82,15 +83,17 @@ function RegisterForm() {
                     <LoginIcons className="icon" src={At} />
                 </FormGroup>
 
-                <FormGroup>
+                <FormGroup wrong={wrong}>
                     <input type="password" id="senha" name="senha" placeholder="Senha" />
                     <LoginIcons className="icon" src={Lock} />
                 </FormGroup>
 
-                <FormGroup>
+                <FormGroup wrong={wrong}>
                     <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Confirmar Senha" />
                     <LoginIcons className="icon" src={ShieldCheck} />
                 </FormGroup>
+
+                {wrong && <p className="wrong-message">As senhas não correspondem!</p>}
 
                 <SubmitButton type="submit">Registrar-se</SubmitButton>
             </Form>

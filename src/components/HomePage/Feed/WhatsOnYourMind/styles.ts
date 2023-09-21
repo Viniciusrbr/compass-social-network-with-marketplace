@@ -5,7 +5,10 @@ export const Container = styled.div`
     flex-direction: column;
     gap: 0.75rem;
 
-    width: 48.875rem;
+    border-radius: 1rem;
+    border: 2px solid var(--gray-gray-600, #2E2F36);
+    width: 100%;
+    height: 100%;
     padding: 1rem;
     background-color: ${props => props.theme["gray-700"]};
     font-family: Poppins;

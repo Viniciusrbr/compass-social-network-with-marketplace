@@ -38,9 +38,14 @@ export const Form = styled.form`
     flex-direction: column;
     width: 25.375rem;
     gap: 24px;
+
+    .wrong-message{
+    color: yellow;
+    text-align: center;
+  }
 `;
 
-export const FormGroup = styled.div`
+export const FormGroup = styled.div<{ wrong?: boolean }>`
     display: flex;
     justify-content: space-between;
     width: 25.375rem;
@@ -58,6 +63,11 @@ export const FormGroup = styled.div`
     width: 100%;
   }
 
+  
+
+ border-color: ${(props) => (props.wrong ? "yellow" : "")};
+ 
+  
 `;
 
 export const LoginIcons = styled.img`
