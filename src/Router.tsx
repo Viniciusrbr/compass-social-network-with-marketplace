@@ -4,6 +4,7 @@ import RegisterForm from "./components/LoginPage/RegisterForm";
 import LoginMainLayout from "./layout/LoginMainLayout";
 import HomeMainLayout from "./layout/HomeMainLayout";
 import Profile from "./components/Profile";
+import Feed from "./components/HomePage/Feed";
 
 
 
@@ -16,7 +17,8 @@ export function Router() {
             </Route>
 
             <Route path="/home" element={<HomeMainLayout />}>
-               <Route path="profile" element={<Profile />} />
+                <Route path="/home" element={<Feed/ >} />
+                <Route path="profile" element={<Profile />} />
             </Route>
 
         </Routes>
