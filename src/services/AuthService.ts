@@ -37,6 +37,7 @@ const authServise = {
 
         if (res.status === 200) {
             sessionStorage.setItem("user-token", res.data.token); // Salva o token no sessionStorage
+            sessionStorage.setItem("id", res.data.usuario.id); // Salva o id do usuario no sessionStorage
         }
 
         return res;

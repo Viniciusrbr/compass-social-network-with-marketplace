@@ -8,11 +8,12 @@ import { useEffect } from "react";
 function HomeMainLayout() {
   const navigate = useNavigate();
 
+  /*
   useEffect(() => {
     if (!sessionStorage.getItem("user-token")) {
       navigate("/")
     }
-  }, []);
+  }, []);*/
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 

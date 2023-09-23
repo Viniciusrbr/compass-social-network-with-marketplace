@@ -5,10 +5,17 @@ import Cake from "../../assets/userInfo-icons/Cake.svg"
 import MapPin from "../../assets/userInfo-icons/MapPin.svg"
 import Message from "../../assets/userInfo-icons/Message.svg"
 import Phone from "../../assets/userInfo-icons/Phone.svg"
-
 import UserPost from "../UserPost"
+import { useState } from "react"
+import EditProfileModal from "../EditProfileModal"
 
 function Profile() {
+  const [modalOpen, setModalOpen] = useState(false)
+
+  const showModal = () => {
+    setModalOpen(!modalOpen)
+  }
+
   return (
     <Container>
       <UserThumbnail>
@@ -21,8 +28,9 @@ function Profile() {
             <h1>Eduardo Perreira</h1>
             <p>UI/UX Designer</p>
           </div>
-          <button>Editar Perfil</button>
+          <button onClick={showModal}>Editar Perfil</button>
         </UserThumbnailInfo>
+        {modalOpen && <EditProfileModal modalOpen={showModal} />}
       </UserThumbnail>
 
       <UserContent>
