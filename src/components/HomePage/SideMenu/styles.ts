@@ -12,12 +12,11 @@ export const SideMenuSection = styled.aside`
     height: 100vh;
 
     transform: translateX(-100%);
-    transition: transform 5s ease;
+    transition: transform 0.5s ease;
 
   &.open {
-    transform: translateX(0);
-    
     display: flex;
+    transform: translateX(0);
   }
 
     img{
@@ -33,6 +32,7 @@ export const SideMenuSection = styled.aside`
     }
     li{
         padding: 0.75rem 1.5rem;
+        
 
         &:hover{
             background: ${props => props.theme["orange"]};
@@ -44,6 +44,25 @@ export const SideMenuSection = styled.aside`
 
         &:hover{
             color: ${props => props.theme.black};
+        }
+    }
+
+    
+    @media(max-width: 768px){
+        display: flex;
+        position: fixed;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        background: ${props => props.theme["gray-700"]};
+        overflow-y: auto;
+        transform: translateX(-100%);
+        transition: transform 0.5s ease;
+        &.open {
+            transform: translateX(0);
         }
     }
 `

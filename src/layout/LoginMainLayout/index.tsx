@@ -10,7 +10,7 @@ function LoginMainLayout() {
             <ImageWrapper>
                 <BackgroundImage src={Image} alt="Background" />
             </ImageWrapper>
-            
+
         </Container>
     );
 }

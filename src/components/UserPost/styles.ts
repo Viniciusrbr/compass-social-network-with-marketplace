@@ -99,7 +99,14 @@ export const Container = styled.div`
       font-size: 0.875rem;
       font-weight: 400;
       }
+
+      @media (max-width: 465px) {
+      flex-direction: column;
+      gap: 0.38rem;
     }
+    }
+
+    
   }
 `;
 

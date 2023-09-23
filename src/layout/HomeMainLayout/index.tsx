@@ -24,7 +24,7 @@ function HomeMainLayout() {
   return (
 
     <Container>
-      <SideMenu isOpen={isMenuOpen} />
+      <SideMenu isOpen={isMenuOpen} onClose={toggleMenu} />
 
       <main>
         <Header onMenuToggle={toggleMenu} />

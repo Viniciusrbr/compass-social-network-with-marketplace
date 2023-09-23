@@ -6,17 +6,17 @@ export const FormWrapper = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
+    max-height: 61.376rem;
    
     background: var(--gradient-background, linear-gradient(180deg, #2E2F36 0%, #17181C 100%));
-    gap: 24px;
+    gap: 1.5rem;
 `;
 
 export const FormTexts = styled.div`
     width: 25.375rem;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 1.5rem;
     
     h1 {
         font-weight: 500;
@@ -37,7 +37,7 @@ export const Form = styled.form`
     display: flex;
     flex-direction: column;
     width: 25.375rem;
-    gap: 24px;
+    gap: 1.5rem;
 
     .wrong-message{
     color: yellow;
@@ -48,7 +48,6 @@ export const Form = styled.form`
 export const FormGroup = styled.div<{ wrong?: boolean }>`
     display: flex;
     justify-content: space-between;
-    width: 25.375rem;
     border: none;
     background-color: transparent;
     padding: 19px 24px;

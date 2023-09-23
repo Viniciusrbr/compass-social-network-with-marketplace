@@ -46,6 +46,11 @@ export const Container = styled.div`
         div{
             display: flex;
             gap: 1.5rem;
+
+         @media (max-width: 385px) {
+            gap: 0.5rem;
+        }
+
         }
 
         img{
@@ -66,7 +71,17 @@ export const Container = styled.div`
             outline: none;
 
             cursor: pointer;
+
+            @media (max-width: 430px) {
+                padding: 0.5rem 1rem;
+            }
+
         }
+
+        @media (max-width: 465px) {
+            gap: 1.5rem;
+        }
+
     }
 
 `

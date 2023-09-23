@@ -31,6 +31,14 @@ export const OpenMenu = styled.div`
         border: 2px solid var(--gray-gray-650, #27282F);
         background: ${props => props.theme["orange"]};
     }
+    
+    p{
+        @media (max-width: 440px){
+        display: none;
+        }
+    }
+
+    
 `;
 
 export const UserInfo = styled.div`

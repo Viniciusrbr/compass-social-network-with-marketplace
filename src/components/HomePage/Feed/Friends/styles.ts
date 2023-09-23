@@ -44,4 +44,8 @@ export const Container = styled.div`
             border-radius: 50%;
         }
     }
+
+    @media (max-width: 690px){
+        display: none;
+    }
 `;
