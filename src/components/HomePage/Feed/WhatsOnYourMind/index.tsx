@@ -4,6 +4,7 @@ import Image from "../../../../assets/comment-icons/image.svg"
 import Clipper from "../../../../assets/comment-icons/clipper.svg"
 import Location from "../../../../assets/comment-icons/location.svg"
 import Emoji from "../../../../assets/comment-icons/emojis.svg"
+import { OrangeButton } from "../../../../layout/OrangeButton"
 
 function WhatsOnYourMind() {
     return (
@@ -24,7 +25,7 @@ function WhatsOnYourMind() {
                     <img src={Emoji} />
                 </div>
 
-                <button>Postar</button>
+                <OrangeButton>Postar</OrangeButton>
             </div>
 
         </Container>

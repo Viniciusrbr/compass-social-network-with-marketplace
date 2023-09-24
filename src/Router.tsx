@@ -1,21 +1,21 @@
 import { Routes, Route } from "react-router-dom";
-import Login from "./pages/Login";
 import RegisterForm from "./components/LoginPage/RegisterForm";
-import LoginMainLayout from "./layout/LoginMainLayout";
-import HomeMainLayout from "./layout/HomeMainLayout";
+import LoginMainLayout from "./pages/LoginMainLayout";
+import HomeMainLayout from "./pages/HomeMainLayout";
 import Profile from "./components/Profile";
 import Feed from "./components/HomePage/Feed";
+import LoginForm from "./components/LoginPage/LoginForm";
 
 export function Router() {
     return (
         <Routes>
             <Route path="/" element={<LoginMainLayout />}>
-                <Route path="/" element={<Login />} />
+                <Route path="/" element={<LoginForm />} />
                 <Route path="/register" element={<RegisterForm />} />
             </Route>
 
             <Route path="/home" element={<HomeMainLayout />}>
-                <Route path="/home" element={<Feed/ >} />
+                <Route path="/home" element={<Feed />} />
                 <Route path="profile" element={<Profile />} />
             </Route>
 

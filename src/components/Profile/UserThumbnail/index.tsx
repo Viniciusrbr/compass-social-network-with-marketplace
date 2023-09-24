@@ -2,6 +2,7 @@ import { useState } from "react"
 import EditProfileModal from "../../EditProfileModal"
 import { Container, UserThumbnailInfo, ProfileAndName, ThumbnailImg } from "./styles"
 import ThumbImage from "../../../assets/images/userThumb.jpg"
+import { OrangeButton } from "../../../layout/OrangeButton"
 
 function UserThumbnail() {
   const [modalOpen, setModalOpen] = useState(false)
@@ -24,7 +25,7 @@ function UserThumbnail() {
             </div>
           </ProfileAndName>
 
-          <button onClick={showModal}>Editar Perfil</button>
+          <OrangeButton onClick={showModal}>Editar Perfil</OrangeButton>
         </UserThumbnailInfo>
 
       {modalOpen && <EditProfileModal modalOpen={showModal} />}

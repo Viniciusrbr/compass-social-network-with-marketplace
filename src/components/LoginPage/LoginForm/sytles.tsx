@@ -62,34 +62,13 @@ export const FormGroup = styled.div<{ wrong?: boolean }>`
     width: 100%;
   }
 
-  
-
  border-color: ${(props) => (props.wrong ? "yellow" : "")};
- 
-  
 `;
 
 export const LoginIcons = styled.img`
     width: 1.5rem;
     height: 1.5rem;
-
-    &.icon {
-        filter: invert(1); 
-    }
 `
-
-export const SubmitButton = styled.button`
-    color: ${props => props.theme["white"]};
-    background-color: ${props => props.theme["orange"]};
-
-    border-radius: 46px;
-    border: 1px solid var(--orange, #FE2E05);
-
-    padding: 16px 24px;
-    cursor: pointer;
-
-    font-weight: 600;
-`;
 
 export const RegisterText = styled.p`
     width: 25.375rem;

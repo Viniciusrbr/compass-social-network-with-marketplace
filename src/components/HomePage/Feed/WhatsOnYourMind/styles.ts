@@ -59,23 +59,9 @@ export const Container = styled.div`
         }
 
         button{
-            
-            font-size: 1rem;
-            font-weight: 600;
-
-            padding: 1rem 1.5rem;
-            color: ${props => props.theme["white"]};
-            background-color: ${props => props.theme["orange"]};
-            border-radius: 2.875rem;
-            border: none;
-            outline: none;
-
-            cursor: pointer;
-
             @media (max-width: 430px) {
                 padding: 0.5rem 1rem;
             }
-
         }
 
         @media (max-width: 465px) {

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { FormWrapper, Form, FormGroup, SubmitButton, RegisterText, FormTexts, LoginIcons } from "../LoginForm/sytles";
+import { FormWrapper, Form, FormGroup, RegisterText, FormTexts, LoginIcons } from "../LoginForm/sytles";
 import User from "../../../assets/icons/User.svg";
 import Fingerprint from "../../../assets/icons/Fingerprint.svg";
 import Calendar from "../../../assets/icons/Calendar.svg";
@@ -8,6 +8,7 @@ import Lock from "../../../assets/icons/Lock.svg";
 import ShieldCheck from "../../../assets/icons/ShieldCheck.svg";
 import { FormEvent, useState } from "react";
 import AuthService, { RegisterParams } from "../../../services/AuthService";
+import { OrangeButton } from "../../../layout/OrangeButton";
 
 
 function RegisterForm() {
@@ -68,37 +69,37 @@ function RegisterForm() {
             <Form onSubmit={handleRegister}>
                 <FormGroup>
                     <input type="text" id="nome" name="nome" placeholder="Nome" max={255} />
-                    <LoginIcons className="icon" src={User} />
+                    <LoginIcons src={User} />
                 </FormGroup>
 
                 <FormGroup>
                     <input type="text" id="usuario" name="usuario" placeholder="Usuário" max={255} />
-                    <LoginIcons className="icon" src={Fingerprint} />
+                    <LoginIcons src={Fingerprint} />
                 </FormGroup>
 
                 <FormGroup>
                     <input type="text" id="data_nascimento" name="data_nascimento" placeholder="Nascimento" />
-                    <LoginIcons className="icon" src={Calendar} />
+                    <LoginIcons src={Calendar} />
                 </FormGroup>
 
                 <FormGroup>
                     <input type="email" id="email" name="email" placeholder="Email" />
-                    <LoginIcons className="icon" src={At} />
+                    <LoginIcons src={At} />
                 </FormGroup>
 
                 <FormGroup wrong={wrong}>
                     <input type="password" id="password" name="password" placeholder="Senha" />
-                    <LoginIcons className="icon" src={Lock} />
+                    <LoginIcons src={Lock} />
                 </FormGroup>
 
                 <FormGroup wrong={wrong}>
                     <input type="password" id="confirmar_senha" name="confirmar_senha" placeholder="Confirmar Senha" />
-                    <LoginIcons className="icon" src={ShieldCheck} />
+                    <LoginIcons src={ShieldCheck} />
                 </FormGroup>
 
                 {wrong && <p className="wrong-message">As senhas não correspondem!</p>}
 
-                <SubmitButton type="submit">Registrar-se</SubmitButton>
+                <OrangeButton type="submit">Registrar-se</OrangeButton>
             </Form>
 
             <RegisterText>Já possui uma conta? <Link to="/">Faça Login</Link></RegisterText>

@@ -1,15 +1,16 @@
-import { FormWrapper, Form, FormGroup, SubmitButton, RegisterText, FormTexts, LoginIcons } from "./sytles";
+import { FormWrapper, Form, FormGroup, RegisterText, FormTexts, LoginIcons } from "./sytles";
 import User from "../../../assets/icons/User.svg";
 import Lock from "../../../assets/icons/Lock.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { FormEvent, useState } from "react";
 import authServise from "../../../services/AuthService";
 import { useEffect } from "react";
+import { OrangeButton } from "../../../layout/OrangeButton";
 
 const LoginForm = () => {
     const navigate = useNavigate();
     const [wrong, setWrong] = useState(false)
-    
+
 
     useEffect(() => {
         if (sessionStorage.getItem("user-token")) {
@@ -49,17 +50,17 @@ const LoginForm = () => {
             <Form onSubmit={handleLogin}>
                 <FormGroup wrong={wrong}>
                     <input type="text" id="usuario" name="usuario" placeholder="Usuário" />
-                    <LoginIcons className="icon" src={User} />
+                    <LoginIcons  src={User} />
                 </FormGroup>
 
                 <FormGroup wrong={wrong}>
                     <input type="password" id="password" name="password" placeholder="Senha" />
-                    <LoginIcons className="icon" src={Lock} />
+                    <LoginIcons  src={Lock} />
                 </FormGroup>
 
                 {wrong && <p className="wrong-message">Usuário e/ou Senha inválidos. Por favor, tente novamente!</p>}
 
-                <SubmitButton type="submit">Entrar</SubmitButton>
+                <OrangeButton type="submit">Entrar</OrangeButton>
             </Form>
 
             <RegisterText>Novo por aqui? <Link to="/register">Registre-se</Link></RegisterText>

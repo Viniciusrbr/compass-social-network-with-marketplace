@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.div `
  margin-top: 2rem;
   width: 100%;
   background-color: ${props => props.theme["gray-700"]};
@@ -105,9 +105,12 @@ export const Container = styled.div`
       gap: 0.38rem;
     }
     }
-
-    
   }
+`;
+
+export const MoreOptionsButton = styled.button`
+  background-color: transparent;
+  border: none;
 `;
 
 export const PostContent = styled.p`

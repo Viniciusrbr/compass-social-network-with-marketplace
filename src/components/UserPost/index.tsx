@@ -1,4 +1,4 @@
-import { Container, PostContent } from './styles'
+import { Container, MoreOptionsButton, PostContent } from './styles'
 import MoreOptions from "../../assets/icons/MoreOptions.svg"
 import like from "../../assets/comment-icons/like.svg";;
 import comment from "../../assets/comment-icons/comment.svg";
@@ -24,7 +24,9 @@ function UserPost() {
                         <p>UI/UX Designer</p>
                     </div>
                 </div>
-                <img src={MoreOptions} alt="" />
+                <MoreOptionsButton>
+                    <img src={MoreOptions} alt="" />
+                </MoreOptionsButton>
 
             </div>
 
