@@ -6,16 +6,15 @@ export const SideMenuSection = styled.aside`
     padding: 2.625rem 0.625rem;
     flex-direction: column;
     align-items: center;
-   
+    border: 2px solid ${props => props.theme["gray-600"]};
     background: ${props => props.theme["gray-700"]};
-
-    height: 100vh;
 
     transform: translateX(-100%);
     transition: transform 0.5s ease;
 
   &.open {
     display: flex;
+    align-self: stretch;
     transform: translateX(0);
   }
 

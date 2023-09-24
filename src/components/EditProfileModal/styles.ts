@@ -9,12 +9,16 @@ export const Backdrop = styled.div`
     height: 100vh;
     z-index: 20;
     background-color: rgba(0, 0, 0, 0.75);
+    
 `;
 
 export const Container = styled.div`
+
 h1{
     margin-bottom: 1.5rem;
 }
+
+
 
 position: fixed;
 top: 50%;
@@ -27,8 +31,9 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 
-width: 31.25rem;
-padding: 1.5rem;
+width: 26.875rem;
+
+padding: 1rem;
 
 border-radius: 1rem;
 border: 2px solid var(--gray-gray-600, #2E2F36);
@@ -44,7 +49,8 @@ gap: 1.5rem;
 
 export const FormGroup = styled.div`
 display: flex;
-padding: 1.1875rem 1.5rem;
+padding: 0.8rem;
+
 border-radius: 2.875rem;
 border: 2px solid ${props => props.theme["white"]};
 
@@ -59,6 +65,7 @@ input {
 img{
 width: 1.5rem;
 height: 1.5rem;
+padding: 0.1875rem;
 
 }
 `

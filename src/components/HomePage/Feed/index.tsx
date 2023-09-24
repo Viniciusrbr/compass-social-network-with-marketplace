@@ -10,6 +10,14 @@ function Feed() {
             <div className="mainFeed">
                 <WhatsOnYourMind />
                 <UserPost />
+                <UserPost />
+                <UserPost />
+                <UserPost />
+                <UserPost />
+                <UserPost />
+                <UserPost />
+                <UserPost />
+                <UserPost />
             </div>
 
             <Friends />
