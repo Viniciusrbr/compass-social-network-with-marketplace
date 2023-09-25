@@ -5,6 +5,7 @@ import HomeMainLayout from "./pages/HomeMainLayout";
 import Profile from "./components/Profile";
 import Feed from "./components/HomePage/Feed";
 import LoginForm from "./components/LoginPage/LoginForm";
+import Marketplace from "./components/Marketplace";
 
 export function Router() {
     return (
@@ -17,6 +18,7 @@ export function Router() {
             <Route path="/home" element={<HomeMainLayout />}>
                 <Route path="/home" element={<Feed />} />
                 <Route path="profile" element={<Profile />} />
+                <Route path="marketplace" element={<Marketplace />} />
             </Route>
 
         </Routes>

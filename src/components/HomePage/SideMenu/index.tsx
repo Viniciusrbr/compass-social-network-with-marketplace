@@ -18,8 +18,8 @@ function SideMenu({ isOpen, onClose }: SideMenuProps) {
       <ul>
         <li><Link to="/home" onClick={handleLinkClick}>Página Inicial</Link></li>
         <li><Link to="profile" onClick={handleLinkClick}>Meu Perfil</Link></li>
-        <li><a href="#">Marketplace</a></li>
-        <li><a href="#">Sair</a></li>
+        <li><Link to="marketplace" onClick={handleLinkClick}>Marketplace</Link></li>
+        <li><Link to="/">Sair</Link></li>
       </ul>
 
     </SideMenuSection>
