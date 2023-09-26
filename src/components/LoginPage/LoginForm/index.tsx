@@ -10,6 +10,7 @@ import { OrangeButton } from "../../../layout/OrangeButton";
 const LoginForm = () => {
     const navigate = useNavigate();
     const [wrong, setWrong] = useState(false)
+    const [loading, setLoading] = useState(false)
 
 
     useEffect(() => {
@@ -20,6 +21,7 @@ const LoginForm = () => {
 
     const handleLogin = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+        setLoading(true)
 
         const formData = new FormData(event.currentTarget);
 
@@ -28,6 +30,8 @@ const LoginForm = () => {
         const params = { usuario, password };
 
         const { status } = await authServise.login(params);
+
+        setLoading(false)
 
         if (status === 200) {
             alert("você esta logado")
@@ -60,7 +64,7 @@ const LoginForm = () => {
 
                 {wrong && <p className="wrong-message">Usuário e/ou Senha inválidos. Por favor, tente novamente!</p>}
 
-                <OrangeButton type="submit">Entrar</OrangeButton>
+                <OrangeButton type="submit">{loading ? "Carregando..." : "Entrar"}</OrangeButton>
             </Form>
 
             <RegisterText>Novo por aqui? <Link to="/register">Registre-se</Link></RegisterText>

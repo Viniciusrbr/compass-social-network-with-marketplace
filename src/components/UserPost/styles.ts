@@ -10,37 +10,7 @@ export const Container = styled.div `
   padding: 1rem;
 
   border-radius: 1rem;
-  border: 2px solid var(--gray-gray-600, #2E2F36);
-
-  .post-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    .user-info{
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-    }
-    h1{
-      font-size: 0.875rem;
-      font-style: normal;
-      font-weight: bold;
-    }
-
-    p{
-      font-size: 0.75rem;
-      font-style: normal;
-      font-weight: 400;
-    }
-
-    img{
-      width: 2rem;
-      height: 2rem;
-      border-radius: 50%;
-    }
-    
-  }
+  border: 2px solid${props => props.theme["gray-600"]};
 
   .post-options{
     display: flex;
@@ -55,6 +25,13 @@ export const Container = styled.div `
       display: flex;
       align-items: center;
       gap: 0.5rem;
+    }
+    span{
+      padding: 0.125rem 0.375rem;
+      align-items: flex-start;
+
+      border-radius: 1rem;
+      background: ${props => props.theme["gray-200"]};
     }
   }
 
@@ -108,9 +85,47 @@ export const Container = styled.div `
   }
 `;
 
-export const MoreOptionsButton = styled.button`
-  background-color: transparent;
-  border: none;
+export const PostHeader = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+`;
+
+export const PostHeaderContent = styled.div`
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    .clock{
+      width: 0.75rem;
+      height: 0.75rem;
+    }
+
+    .profileImg{
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+    }
+ 
+    h1{
+      font-size: 0.875rem;
+      font-style: normal;
+      font-weight: bold;
+    }
+
+    p{
+      display: flex;
+      align-items: center;
+      gap: 0.38rem;
+      font-size: 0.75rem;
+      font-style: normal;
+      font-weight: 400;
+    }
+
+    
+
 `;
 
 export const PostContent = styled.p`
@@ -119,3 +134,44 @@ export const PostContent = styled.p`
   font-size: 0.75rem;
   font-weight: 400;
 `;
+
+export const TimePost = styled.p`
+  color: ${props => props.theme["gray-300"]};
+  font-weight: 400;
+`
+export const LocalPost = styled.p`
+font-weight: 500;
+` 
+export const CommentsSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  h3{
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  div{
+    display: flex;
+    gap: 1rem;
+
+    img{
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+    }
+
+    p{
+      font-size: 0.75rem;
+      font-weight: 400;
+    }
+
+    span{
+      font-weight: bold;
+    }
+  }
+`

@@ -9,27 +9,27 @@ export const FormWrapper = styled.div`
     max-height: 61.376rem;
    
     background: var(--gradient-background, linear-gradient(180deg, #2E2F36 0%, #17181C 100%));
-    gap: 1.5rem;
+    gap: 1.2rem;
 `;
 
 export const FormTexts = styled.div`
     width: 25.375rem;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.2rem;
     
     h1 {
         font-weight: 500;
-        font-size: 4rem;
+        font-size: 3rem;
     }
     p{
         font-weight: 400;
-        font-size: 1rem;   
+        font-size: 0.9rem;   
     }
 
     h2{
         font-weight: 400;
-        font-size: 2rem; 
+        font-size: 1.5rem; 
     }
 `
 
@@ -50,7 +50,7 @@ export const FormGroup = styled.div<{ wrong?: boolean }>`
     justify-content: space-between;
     border: none;
     background-color: transparent;
-    padding: 19px 24px;
+    padding: 1rem;
     border-radius: 46px;
     border: 2px solid var(--white, #F5F5F5);
     
@@ -68,6 +68,7 @@ export const FormGroup = styled.div<{ wrong?: boolean }>`
 export const LoginIcons = styled.img`
     width: 1.5rem;
     height: 1.5rem;
+    padding: 0.1875rem;
 `
 
 export const RegisterText = styled.p`

@@ -4,7 +4,6 @@ const baseURL = "https://socialcompass.pagekite.me/api/";
 
 const api = axios.create({
     baseURL,
-    timeout: 30000,
 });
 
 api.interceptors.request.use(
