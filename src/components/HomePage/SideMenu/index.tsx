@@ -12,8 +12,9 @@ function SideMenu({ isOpen, onClose }: SideMenuProps) {
 
   const handleLinkClick = () => { onClose() }
 
-  const cleanToken = () => {
+  const cleanTokenAndId = () => {
     sessionStorage.removeItem("user-token")
+    sessionStorage.removeItem("id")
     navigate("/")
   }
 
@@ -25,7 +26,7 @@ function SideMenu({ isOpen, onClose }: SideMenuProps) {
         <li><Link to="/home" onClick={handleLinkClick}>Página Inicial</Link></li>
         <li><Link to="profile" onClick={handleLinkClick}>Meu Perfil</Link></li>
         <li><Link to="marketplace" onClick={handleLinkClick}>Marketplace</Link></li>
-        <li><Link to="/" onClick={cleanToken}>Sair</Link></li>
+        <li><Link to="/" onClick={cleanTokenAndId}>Sair</Link></li>
       </ul>
 
     </SideMenuSection>

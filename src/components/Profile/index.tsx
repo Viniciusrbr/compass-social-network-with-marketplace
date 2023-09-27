@@ -19,8 +19,6 @@ function Profile() {
       }
     }, [userId])
   
-   console.log(userData)
-
   return (
     <Container>
 

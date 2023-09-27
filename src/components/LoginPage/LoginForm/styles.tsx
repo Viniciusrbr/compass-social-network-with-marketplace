@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const FormWrapper = styled.div`
+export const Container = styled.div`
     flex: 1;
     display: flex;
     justify-content: center;
@@ -10,6 +10,10 @@ export const FormWrapper = styled.div`
    
     background: var(--gradient-background, linear-gradient(180deg, #2E2F36 0%, #17181C 100%));
     gap: 1.2rem;
+
+    @media (max-width: 910px) {
+
+    }
 `;
 
 export const FormTexts = styled.div`

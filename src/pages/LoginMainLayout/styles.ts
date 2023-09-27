@@ -16,4 +16,8 @@ export const ImageWrapper = styled.div`
 export const BackgroundImage = styled.img`
   height: 100%; 
   object-fit: cover; 
+
+  @media (max-width: 910px) {
+    display: none;
+  }
 `;

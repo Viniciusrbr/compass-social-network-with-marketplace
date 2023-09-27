@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { FormWrapper, Form, FormGroup, RegisterText, FormTexts, LoginIcons } from "../LoginForm/sytles";
+import { Container, Form, FormGroup, RegisterText, FormTexts, LoginIcons } from "../LoginForm/styles";
 import User from "../../../assets/icons/User.svg";
 import Fingerprint from "../../../assets/icons/Fingerprint.svg";
 import Calendar from "../../../assets/icons/Calendar.svg";
@@ -52,12 +52,12 @@ function RegisterForm() {
         } if (status === 422) {
             alert('Usuario ou email já cadastrado.')
         }
-        
+
 
     }
 
     return (
-        <FormWrapper>
+        <Container>
             <FormTexts>
                 <h1>Olá,</h1>
                 <p>Por favor, registre-se para continuar.</p>
@@ -101,7 +101,7 @@ function RegisterForm() {
             </Form>
 
             <RegisterText>Já possui uma conta? <Link to="/">Faça Login</Link></RegisterText>
-        </FormWrapper>
+        </Container>
     )
 }
 
