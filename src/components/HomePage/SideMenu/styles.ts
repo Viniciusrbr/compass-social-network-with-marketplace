@@ -4,6 +4,7 @@ export const SideMenuSection = styled.aside`
     display: none;
     width: 21.875rem;
     padding: 2.625rem 0.625rem;
+    min-height: 100vh;
     flex-direction: column;
     align-items: center;
     border: 2px solid ${props => props.theme["gray-600"]};

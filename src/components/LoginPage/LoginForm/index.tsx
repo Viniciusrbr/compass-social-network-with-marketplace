@@ -11,9 +11,11 @@ const LoginForm = () => {
     const navigate = useNavigate();
     const [wrong, setWrong] = useState(false)
     const [loading, setLoading] = useState(false)
+    const [apiStatus, setApiStatus] = useState('active');
 
 
     useEffect(() => {
+        setApiStatus('active');
         if (sessionStorage.getItem("user-token")) {
             navigate("/home")
         }
@@ -29,15 +31,21 @@ const LoginForm = () => {
         const password = formData.get("password")!.toString();
         const params = { usuario, password };
 
-        const { status } = await authServise.login(params);
+        try {
+            const { status } = await authServise.login(params);
 
-        setLoading(false)
-
-        if (status === 200) {
-            alert("você esta logado")
-            navigate("/home")
-        } else {
-            setWrong(true)
+            if (status === 200) {
+                alert("você está logado")
+                navigate("/home")
+            }
+             else {
+                setWrong(true)
+            }
+        } catch (error) {
+            // A API falhou, definir apiStatus como "inactive"
+            setApiStatus('inactive');
+        } finally {
+            setLoading(false);
         }
 
     }
@@ -54,17 +62,27 @@ const LoginForm = () => {
             <Form onSubmit={handleLogin}>
                 <FormGroup wrong={wrong}>
                     <input type="text" id="usuario" name="usuario" placeholder="Usuário" />
-                    <LoginIcons  src={User} />
+                    <LoginIcons src={User} />
                 </FormGroup>
 
                 <FormGroup wrong={wrong}>
                     <input type="password" id="password" name="password" placeholder="Senha" />
-                    <LoginIcons  src={Lock} />
+                    <LoginIcons src={Lock} />
                 </FormGroup>
 
                 {wrong && <p className="wrong-message">Usuário e/ou Senha inválidos. Por favor, tente novamente!</p>}
 
-                <OrangeButton type="submit">{loading ? "Carregando..." : "Entrar"}</OrangeButton>
+                {apiStatus === 'inactive' ? (
+                    <>
+                        <p className="wrong-message">Servidor fora do ar. Por favor, tente novamente mais tarde!</p>
+                        <OrangeButton type="submit">Entrar</OrangeButton>
+                    </>
+                ) : (
+                    <>
+                        {wrong && <p className="wrong-message">Usuário e/ou Senha inválidos. Por favor, tente novamente!</p>}
+                        <OrangeButton type="submit">{loading ? "Carregando..." : "Entrar"}</OrangeButton>
+                    </>
+                )}
             </Form>
 
             <RegisterText>Novo por aqui? <Link to="/register">Registre-se</Link></RegisterText>

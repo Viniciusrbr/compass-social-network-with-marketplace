@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL = "https://socialcompass.pagekite.me/api/";
+const baseURL = "https://socialcompass.pagekite.me/api";
 
 const api = axios.create({
     baseURL,

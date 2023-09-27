@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   padding: 1.5rem;
   width:  23rem;
+  max-height: 21rem;
   border-radius: 1rem;
   background-color: ${props => props.theme["gray-700"]};
   

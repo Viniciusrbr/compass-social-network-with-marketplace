@@ -1,13 +1,12 @@
 import styled from "styled-components";
 
-export const Container = styled.div `
+export const Container = styled.div`
  margin-top: 2rem;
   width: 100%;
   background-color: ${props => props.theme["gray-700"]};
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 1rem;
 
   border-radius: 1rem;
   border: 2px solid${props => props.theme["gray-600"]};
@@ -16,6 +15,7 @@ export const Container = styled.div `
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0.625rem 3rem;
 
     font-family: Inter;
     font-size: 0.75rem;
@@ -39,6 +39,7 @@ export const Container = styled.div `
     display: flex;
     align-items: center;
     gap: 1rem;
+    padding: 0rem 1rem;
 
     img{
       width: 2rem;
@@ -97,6 +98,7 @@ export const PostHeaderContent = styled.div`
     display: flex;
     gap: 1rem;
     align-items: center;
+    padding: 1rem 1rem 0rem 1rem;
 
     .clock{
       width: 0.75rem;
@@ -123,9 +125,6 @@ export const PostHeaderContent = styled.div`
       font-style: normal;
       font-weight: 400;
     }
-
-    
-
 `;
 
 export const PostContent = styled.p`
@@ -133,6 +132,13 @@ export const PostContent = styled.p`
   font-family: Poppins;
   font-size: 0.75rem;
   font-weight: 400;
+  padding: 0rem 1rem;
+`;
+
+export const PostImage = styled.img`
+  align-self: center;
+  width: 100%;
+  height: 50%;
 `;
 
 export const TimePost = styled.p`
@@ -141,11 +147,12 @@ export const TimePost = styled.p`
 `
 export const LocalPost = styled.p`
 font-weight: 500;
-` 
+`
 export const CommentsSection = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  padding: 0rem 1rem  1rem 1rem;
   h3{
     color: #FFF;
     font-family: Poppins;

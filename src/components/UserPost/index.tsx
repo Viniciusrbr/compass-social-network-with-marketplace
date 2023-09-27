@@ -1,4 +1,4 @@
-import { CommentsSection, Container, LocalPost, PostContent, PostHeader, PostHeaderContent, TimePost } from './styles'
+import { CommentsSection, Container, LocalPost, PostContent, PostHeader, PostHeaderContent, PostImage, TimePost } from './styles'
 import like from "../../assets/comment-icons/like.svg";;
 import comment from "../../assets/comment-icons/comment.svg";
 import share from "../../assets/comment-icons/share.svg";
@@ -24,13 +24,19 @@ function UserPost() {
                 if (response && response.status === 200) {
                     const fetchedPosts = response.data;
 
+                    // Ordena os posts pelo campo data_criacao em ordem decrescente (do mais recente para o mais antigo)
+                    fetchedPosts.sort((a: any, b: any) => {
+                        const dateA: any = new Date(a.data_criacao);
+                        const dateB: any = new Date(b.data_criacao);
+                        return dateB - dateA;
+                    });
+
                     // Faz um map dos comentários para um objeto com chave sendo o id do post
                     const commentsMap: { [postId: number]: ComentarioType[] } = {};
                     fetchedPosts.forEach((post: PostType) => {
                         commentsMap[post.id] = post.comentarios;
                     });
 
-                    
                     setPosts(fetchedPosts);
                     // Atualiza o estado dos comentários juntando com os comentários que ja existem
                     setComments((prevComments) => ({
@@ -74,7 +80,7 @@ function UserPost() {
 
                         <PostHeader >
                             <PostHeaderContent >
-                                <img className='profileImg' src={post.imagem} alt={post.usuario.nome} />
+                                <img className='profileImg' src="https://avatars.githubusercontent.com/u/59899998?v=4" alt="foto de perfil do usuario" />
                                 <div>
                                     <h1>{post.usuario.nome}</h1>
                                     <p> <img className='clock' src={LittleClock} alt="" />
@@ -84,6 +90,7 @@ function UserPost() {
                                 </div>
                             </PostHeaderContent>
                             <PostContent>{post.texto}</PostContent>
+                            <PostImage src={post.imagem} />
                         </PostHeader>
 
                         <div className="post-options">
@@ -115,7 +122,7 @@ function UserPost() {
                                     <div key={comment.id}>
                                         <img src="https://avatars.githubusercontent.com/u/59899998?v=4" alt="" />
                                         <p>
-                                            <span>{comment.usuario.nome}</span> {comment.texto}
+                                            <span>{comment.usuario.nome}:</span> {comment.texto}
                                         </p>
                                     </div>
                                 ))}

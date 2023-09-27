@@ -1,37 +1,25 @@
+import { UsuarioType } from './UserService';
 import api from './api';
-
-export interface UsuarioType {
-    id: string; 
-    nome: string;
-    data_nascimento: string;
-    email: string;
-    sexo: string;
-    endereco: string;
-    telefone: string;
-    profissao: string;
-    data_criacao: string; 
-    data_alteracao: string; 
-}
 
 export interface ComentarioType {
     id: number;
-    usuario_id: string; 
+    usuario_id: string;
     post_id: number;
     texto: string;
-    data_criacao: string; 
-    data_alteracao: string; 
+    data_criacao: string;
+    data_alteracao: string;
     usuario: UsuarioType;
 }
 
 export interface PostType {
     id: number;
-    usuario_id: string; 
+    usuario_id: string;
     texto: string;
     localizacao: string;
-    imagem?: string ; 
+    imagem?: string;
     likes: number;
-    data_criacao: string; 
-    data_alteracao: string; 
+    data_criacao: string;
+    data_alteracao: string;
     usuario: UsuarioType;
     comentarios: ComentarioType[];
 }
