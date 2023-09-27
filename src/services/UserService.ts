@@ -42,7 +42,21 @@ const UserService = {
         });
 
         return res;
-    }
+    },
+
+    GetUserById: async (id: string) => {
+        const token = sessionStorage.getItem("user-token");
+
+        const res = await api.get(`/usuarios/${id}`, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        }).catch((error) => {
+            return error.response;
+        });
+
+        return res;
+    },
 }
 
 export default UserService;

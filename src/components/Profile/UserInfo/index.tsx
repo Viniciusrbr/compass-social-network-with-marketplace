@@ -4,22 +4,17 @@ import Cake from '../../../assets/userInfo-icons/Cake.svg'
 import MapPin from '../../../assets/userInfo-icons/MapPin.svg'
 import Message from '../../../assets/userInfo-icons/Message.svg'
 import Phone from '../../../assets/userInfo-icons/Phone.svg'
-import { useEffect, useState } from 'react'
-import UserService from '../../../services/UserService'
+
 import { UsuarioType } from '../../../services/UserService'
 
-function UserInfo() {
-    const [userData, setUserData] = useState<UsuarioType>();
+interface UserInfoProps {
+    userData: UsuarioType | null; // Define the prop type
+}
 
 
-    useEffect(() => {
-        UserService.LoggedUser().then((response) => {
-            if (response && response.data && response.data.nome) {
-                console.log(response.data);
-                setUserData(response.data);
-            }
-        });
-    }, []);
+function UserInfo({ userData }: UserInfoProps) {
+    
+    
 
     return (
         <Container>

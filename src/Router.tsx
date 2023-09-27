@@ -18,6 +18,7 @@ export function Router() {
             <Route path="/home" element={<HomeMainLayout />}>
                 <Route path="/home" element={<Feed />} />
                 <Route path="profile" element={<Profile />} />
+                <Route path="profile/:userId" element={<Profile />} />
                 <Route path="marketplace" element={<Marketplace />} />
             </Route>
 

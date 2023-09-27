@@ -53,6 +53,20 @@ const postsService = {
         });
 
         return res;
+    },
+
+    getPostsById: async (id: number) => {
+        const token = sessionStorage.getItem("user-token");
+
+        const res = await api.get(`/posts/${id}`, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        }).catch((error) => {
+            return error.response;
+        });
+
+        return res;
     }
 }
 

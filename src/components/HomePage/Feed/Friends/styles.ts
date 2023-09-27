@@ -24,26 +24,40 @@ export const Container = styled.div`
     }
 
     ul{
-        
         display: flex;
         flex-direction: column;
         gap: 1rem;
+        list-style: none;
 
         li{
-        font-size: 0.875rem;
-        font-weight: 400;
-
-        display: flex;
-        gap: 1rem;
-        align-items: center;    
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
         }
 
-        list-style: none;
+        a{
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 400;
+            color: ${props => props.theme["white"]};
+
+            display: flex;
+            gap: 1rem;
+            align-items: center;  
+            text-decoration: none;
+        }
+
         img{
             width: 2rem;
             height: 2rem;
             border-radius: 50%;
         }
+
     }
 
     @media (max-width: 690px){

@@ -1,12 +1,18 @@
+import { UsuarioType } from '../../../services/UserService';
 import UserPost from '../../UserPost'
 import UserInfo from '../UserInfo'
 import { Container, UserPosts, UserPostsOptions } from './styles'
 
-function UserContent() {
+interface UserContentProps {
+  userData: UsuarioType | null; // Define the prop type
+}
+
+function UserContent({ userData }: UserContentProps) {
+
   return (
     <Container>
 
-      <UserInfo />
+      <UserInfo userData={userData} />
 
       <UserPosts>
         <UserPostsOptions>
@@ -17,7 +23,7 @@ function UserContent() {
 
         <UserPost />
 
-      </UserPosts>
+      </UserPosts >
 
     </Container>
   )
