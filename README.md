@@ -1,27 +1,22 @@
-# React + TypeScript + Vite
+# Rede Social com Marketplace
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h3>Projeto final do meu período de estágio na Compass.</h3>
 
-Currently, two official plugins are available:
+<p>O objetivo foi construir uma rede social onde os usuários cadastrados, ao fazerem login, pudessem:</p>
+<ul>
+  <li>Criar, editar ou excluir seus próprios post.</li>
+  <li>Curtir e comentar o post dos outros usuários.</li>
+  <li>Acessar a sua página de perfil e a de outros usuários.</li>
+  <li>Adicionar e comprar itens dentro do marketplace da plataforma.</li>
+</ul>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+[🎨Design do Projeto - FIGMA ](https://www.figma.com/file/DgQDPrCKfXlYHox0gy1EAM/Compass---Social-Network?type=design&node-id=0-1&mode=design)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+<h3>Tecnologias usadas:</h3>
+<ul>
+  <li>React + TypeScript + Vite</li>
+  <li>React Router DOM</li>
+  <li>Styled Components</li>
+  <li>Axios</li>
+</ul>
